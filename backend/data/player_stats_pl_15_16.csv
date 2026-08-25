@@ -1,0 +1,56 @@
+player,team,minutes_played,goals,xg,assists,xa,goals_p90,xg_p90,assists_p90,xa_p90
+Harry Kane,Tottenham Hotspur,3060,25,23.4,5,4.2,0.74,0.69,0.15,0.12
+Sergio Aguero,Manchester City,2430,24,22.1,4,3.8,0.89,0.82,0.15,0.14
+Jamie Vardy,Leicester City,3060,24,18.7,5,4.5,0.71,0.55,0.15,0.13
+Riyad Mahrez,Leicester City,2880,17,14.2,11,9.3,0.53,0.44,0.34,0.29
+Olivier Giroud,Arsenal,1890,16,15.3,5,4.1,0.76,0.73,0.24,0.20
+Romelu Lukaku,Everton,2790,18,16.8,4,3.5,0.58,0.54,0.13,0.11
+Diego Costa,Chelsea,2340,12,13.2,5,4.8,0.46,0.51,0.19,0.18
+Christian Benteke,Liverpool,2250,15,14.5,3,2.8,0.60,0.58,0.12,0.11
+Odion Ighalo,Watford,2790,15,13.1,2,2.1,0.48,0.42,0.06,0.07
+Troy Deeney,Watford,2610,13,12.4,6,5.2,0.45,0.43,0.21,0.18
+Andy Carroll,West Ham,1440,9,8.7,3,2.9,0.56,0.54,0.19,0.18
+Marcus Rashford,Manchester United,1080,8,7.2,3,2.5,0.67,0.60,0.25,0.21
+Anthony Martial,Manchester United,2160,11,10.5,4,3.7,0.46,0.44,0.17,0.15
+Wayne Rooney,Manchester United,1890,8,7.8,2,2.2,0.38,0.37,0.10,0.10
+Zlatan Ibrahimovic,Manchester United,0,0,0,0,0,0,0,0,0
+Dimitri Payet,West Ham,2790,9,10.2,12,11.5,0.29,0.33,0.39,0.37
+Mesut Ozil,Arsenal,2430,6,5.8,19,17.2,0.22,0.21,0.70,0.64
+Kevin De Bruyne,Manchester City,2790,7,6.5,18,16.8,0.23,0.21,0.58,0.54
+Cesc Fabregas,Chelsea,2340,5,4.8,12,11.2,0.19,0.18,0.46,0.43
+David Silva,Manchester City,2250,4,3.9,10,9.5,0.16,0.16,0.40,0.38
+Christian Eriksen,Tottenham Hotspur,2970,6,5.5,13,12.1,0.18,0.17,0.39,0.37
+Gylfi Sigurdsson,Swansea City,2790,11,9.8,4,3.6,0.35,0.32,0.13,0.12
+Ross Barkley,Everton,2250,8,7.2,5,4.3,0.32,0.29,0.20,0.17
+Dele Alli,Tottenham Hotspur,2520,10,8.7,9,8.2,0.36,0.31,0.32,0.29
+Alexis Sanchez,Arsenal,2970,13,12.1,5,4.5,0.39,0.37,0.15,0.14
+Roberto Firmino,Liverpool,2790,11,10.2,10,9.3,0.35,0.33,0.32,0.30
+Philippe Coutinho,Liverpool,2340,7,6.5,8,7.4,0.27,0.25,0.31,0.28
+Sadio Mane,Southampton,2160,9,8.3,3,2.7,0.38,0.35,0.13,0.11
+Graziano Pelle,Southampton,2340,11,10.4,2,1.8,0.42,0.40,0.08,0.07
+Shane Long,Southampton,1890,6,5.5,2,1.9,0.29,0.26,0.10,0.09
+Charlie Austin,Southampton,1440,6,5.8,1,0.9,0.38,0.36,0.06,0.06
+Jermain Defoe,Sunderland,2790,15,14.2,2,1.7,0.48,0.46,0.06,0.05
+Steven Fletcher,Middlesbrough,1080,6,5.7,1,0.8,0.50,0.48,0.08,0.07
+Alvaro Negredo,Middlesbrough,1890,9,8.5,2,1.9,0.43,0.40,0.10,0.09
+Patrick Bamford,Middlesbrough,540,3,2.8,0,0,0.50,0.47,0,0
+Jordan Ayew,Aston Villa,2340,7,6.5,2,1.8,0.27,0.25,0.08,0.07
+Rudy Gestede,Aston Villa,1620,6,5.8,1,0.9,0.33,0.32,0.06,0.05
+Scott Sinclair,Celtic,0,0,0,0,0,0,0,0,0,0
+Jonathan Kodjia,Aston Villa,0,0,0,0,0,0,0,0,0,0
+Andre Gray,Burnley,2340,9,8.4,2,1.7,0.35,0.32,0.08,0.07
+Sam Vokes,Burnley,2160,7,6.8,2,1.9,0.29,0.28,0.08,0.08
+George Boyd,Burnley,1890,3,2.9,4,3.7,0.14,0.14,0.19,0.18
+Jeff Hendrick,Burnley,2790,3,2.7,2,1.8,0.10,0.09,0.06,0.06
+Joey Barton,Burnley,1620,2,1.9,3,2.8,0.11,0.11,0.17,0.16
+Matt Ritchie,Bournemouth,2790,7,6.5,11,10.2,0.23,0.21,0.35,0.33
+Callum Wilson,Bournemouth,1890,7,6.7,2,1.8,0.33,0.32,0.10,0.09
+Benik Afobe,Bournemouth,1440,6,5.6,1,0.9,0.38,0.35,0.06,0.06
+Junior Stanislas,Bournemouth,1260,5,4.8,3,2.7,0.36,0.34,0.21,0.19
+Max Gradel,Bournemouth,1080,4,3.7,2,1.8,0.33,0.31,0.17,0.15
+Harry Arter,Bournemouth,2340,2,1.8,3,2.6,0.08,0.07,0.12,0.10
+Simon Francis,Bournemouth,2790,1,0.9,2,1.8,0.03,0.03,0.06,0.06
+Steve Cook,Bournemouth,2790,2,1.7,1,0.8,0.06,0.05,0.03,0.03
+Adam Smith,Bournemouth,2520,1,0.8,4,3.5,0.04,0.03,0.14,0.12
+Charlie Daniels,Bournemouth,2340,2,1.8,5,4.5,0.08,0.07,0.19,0.17
+Artur Boruc,Bournemouth,2790,0,0,0,0,0,0,0,0
