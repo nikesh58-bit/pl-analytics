@@ -106,7 +106,7 @@ export default function HomePage() {
       </main>
 
       <footer className="footer">
-        <p>Per 90 metrics only for players with > 0 minutes.</p>
+        <p>Per 90 metrics only for players with {'>'} 0 minutes.</p>
       </footer>
     </div>
   );

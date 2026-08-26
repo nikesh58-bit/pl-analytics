@@ -87,7 +87,7 @@ export function FullTable({ players, loading }: FullTableProps) {
           ))}
         </tbody>
       </table>
-      <p className="table-caption">Showing {players.length} players | Per 90 metrics only for players with > 0 minutes.</p>
+      <p className="table-caption">Showing {players.length} players | Per 90 metrics only for players with {'>'} 0 minutes.</p>
     </div>
   );
 }

@@ -22,8 +22,8 @@ export function ScatterPlot({ data, loading }: ScatterPlotProps) {
   const maxVal = Math.max(maxXG, maxGoals);
 
   const referenceLine = Array.from({ length: 100 }, (_, i) => ({
-    x: (i / 99) * maxVal,
-    y: (i / 99) * maxVal,
+    xg: (i / 99) * maxVal,
+    goals: (i / 99) * maxVal,
   }));
 
   return (
@@ -55,6 +55,7 @@ export function ScatterPlot({ data, loading }: ScatterPlotProps) {
           <Line
             type="monotone"
             data={referenceLine}
+            dataKey="goals"
             stroke="red"
             strokeDasharray="5 5"
             strokeWidth={1.5}
@@ -67,28 +68,21 @@ export function ScatterPlot({ data, loading }: ScatterPlotProps) {
             data={data}
             fill="#3b82f6"
             stroke="#2563eb"
-            customShape={({ cx, cy, size }) => (
-              <circle
-                cx={cx}
-                cy={cy}
-                r={Math.max(4, Math.min(12, size / 3))}
-                fill="#3b82f6"
-                opacity={0.7}
-                stroke="#2563eb"
-                strokeWidth={1.5}
-              />
-            )}
-          >
-            {data.map((point, index) => (
-              <Scatter
-                key={index}
-                name={point.player}
-                data={[{ x: point.xg, y: point.goals, value: point.minutes_played }]}
-                fill="none"
-                stroke="transparent"
-              />
-            ))}
-          </Scatter>
+            shape={(props: any) => {
+              const { cx, cy, payload } = props;
+              return (
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={Math.max(4, Math.min(12, (payload?.value ?? 0) / 3))}
+                  fill="#3b82f6"
+                  opacity={0.7}
+                  stroke="#2563eb"
+                  strokeWidth={1.5}
+                />
+              );
+            }}
+          />
         </ScatterChart>
       </ResponsiveContainer>
       <div className="chart-legend">
