@@ -1,0 +1,22 @@
+import useSWR from 'swr';
+import { api, fetcher } from '@/lib/api';
+
+export function useTeams(params?: Record<string, string>) { const key = `/api/teams${params ? '?' + new URLSearchParams(params).toString() : ''}`; return useSWR(key, fetcher, { revalidateOnFocus: false, dedupingInterval: 30000 }); }
+export function useTeam(id: string) { return useSWR(id ? `/api/teams/${id}` : null, fetcher, { revalidateOnFocus: false }); }
+export function useTeamForm(id: string, limit: number = 5) { return useSWR(id ? `/api/teams/${id}/form?limit=${limit}` : null, fetcher, { revalidateOnFocus: false }); }
+export function usePlayers(params?: Record<string, string>) { const key = `/api/players${params ? '?' + new URLSearchParams(params).toString() : ''}`; return useSWR(key, fetcher, { revalidateOnFocus: false, dedupingInterval: 30000 }); }
+export function usePlayer(id: string) { return useSWR(id ? `/api/players/${id}` : null, fetcher, { revalidateOnFocus: false }); }
+export function usePlayerSeasonStats(playerId: string, seasonId: string, competitionId?: string) { const key = playerId && seasonId ? `/api/players/${playerId}/season-stats?seasonId=${seasonId}${competitionId ? `&competitionId=${competitionId}` : ''}` : null; return useSWR(key, fetcher, { revalidateOnFocus: false }); }
+export function usePlayerCareer(playerId: string) { return useSWR(playerId ? `/api/players/${playerId}/career` : null, fetcher, { revalidateOnFocus: false }); }
+export function useTopPerformers(metric: string, params?: Record<string, string>) { const key = `/api/players/top/${metric}${params ? '?' + new URLSearchParams(params).toString() : ''}`; return useSWR(key, fetcher, { revalidateOnFocus: false }); }
+export function useMatches(params?: Record<string, string>) { const key = `/api/matches${params ? '?' + new URLSearchParams(params).toString() : ''}`; return useSWR(key, fetcher, { revalidateOnFocus: false, refreshInterval: 30000 }); }
+export function useLiveMatches() { return useSWR('/api/matches/live', fetcher, { revalidateOnFocus: false, refreshInterval: 15000 }); }
+export function useUpcomingMatches(limit: number = 10) { return useSWR(`/api/matches/upcoming?limit=${limit}`, fetcher, { revalidateOnFocus: false, refreshInterval: 60000 }); }
+export function useMatch(id: string) { return useSWR(id ? `/api/matches/${id}` : null, fetcher, { revalidateOnFocus: false, refreshInterval: (data) => data?.status === 'LIVE' ? 10000 : false }); }
+export function useShots(params?: Record<string, string>) { const key = `/api/events/shots${params ? '?' + new URLSearchParams(params).toString() : ''}`; return useSWR(key, fetcher, { revalidateOnFocus: false }); }
+export function useHeatmap(playerId: string, seasonId?: string, competitionId?: string) { const key = playerId ? `/api/events/heatmap/${playerId}?seasonId=${seasonId || ''}${competitionId ? `&competitionId=${competitionId}` : ''}` : null; return useSWR(key, fetcher, { revalidateOnFocus: false }); }
+export function useLeagueTable(seasonId: string) { return useSWR(seasonId ? `/api/analytics/table/${seasonId}` : null, fetcher, { revalidateOnFocus: false }); }
+export function useTopScorers(seasonId: string, competitionId?: string, limit: number = 20) { const key = seasonId ? `/api/analytics/top-scorers/${seasonId}?${new URLSearchParams({ competitionId: competitionId || '', limit: limit.toString() }).toString()}` : null; return useSWR(key, fetcher, { revalidateOnFocus: false }); }
+export function useTopAssists(seasonId: string, competitionId?: string, limit: number = 20) { const key = seasonId ? `/api/analytics/top-assists/${seasonId}?${new URLSearchParams({ competitionId: competitionId || '', limit: limit.toString() }).toString()}` : null; return useSWR(key, fetcher, { revalidateOnFocus: false }); }
+export function usePlayerRadar(playerId: string, seasonId: string, competitionId?: string) { const key = playerId && seasonId ? `/api/analytics/radar/${playerId}?seasonId=${seasonId}${competitionId ? `&competitionId=${competitionId}` : ''}` : null; return useSWR(key, fetcher, { revalidateOnFocus: false }); }
+export function useSearch(query: string, limit: number = 5) { const key = query && query.length >= 2 ? `/api/search?q=${encodeURIComponent(query)}&limit=${limit}` : null; return useSWR(key, fetcher, { revalidateOnFocus: false, dedupingInterval: 5000 }); }
