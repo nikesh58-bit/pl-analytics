@@ -25,6 +25,7 @@ model Team {
   awayMatches     Match[]      @relation("AwayMatches")
   events          MatchEvent[]
   seasonStats     TeamSeasonStats[]
+  playerStats     PlayerSeasonStats[]
   standings       Standing[]
   players         Player[]
 
@@ -100,8 +101,8 @@ model Season {
 
   competition   Competition @relation(fields: [competitionId], references: [id])
   matches       Match[]
-  playerStats   PlayerSeasonStats[]
-  teamStats     TeamSeasonStats[]
+  playerStats   PlayerSeasonStats[] @relation("SeasonPlayerStats")
+  teamStats     TeamSeasonStats[]   @relation("SeasonTeamStats")
   standings     Standing[]
 
   @@unique([competitionId, name])
@@ -278,6 +279,7 @@ model PlayerSeasonStats {
 
   player          Player  @relation(fields: [playerId], references: [id], onDelete: Cascade)
   team            Team    @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  season          Season  @relation("SeasonPlayerStats", fields: [seasonId], references: [id], onDelete: Cascade)
 
   @@unique([playerId, seasonId, competitionId])
   @@index([teamId])
@@ -320,6 +322,7 @@ model TeamSeasonStats {
   updatedAt         DateTime @updatedAt
 
   team              Team    @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  season            Season  @relation("SeasonTeamStats", fields: [seasonId], references: [id], onDelete: Cascade)
 
   @@unique([teamId, seasonId, competitionId])
   @@index([seasonId])
