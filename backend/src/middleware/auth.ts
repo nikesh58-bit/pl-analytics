@@ -8,6 +8,7 @@ export interface AuthenticatedRequest extends Request {
     tier: 'FREE' | 'PRO' | 'ENTERPRISE';
     rateLimit: number;
   };
+  validatedQuery?: Record<string, any>;
 }
 
 const TIER_LIMITS = {
