@@ -65,7 +65,7 @@ export class PlayerService {
     if (cached) return cached;
 
     const stats = await prisma.playerSeasonStats.findMany({ where: { playerId }, include: { season: true, competition: true, team: true }, orderBy: { season: { startDate: 'desc' } } });
-    const career = stats.reduce((acc, s) => ({ appearances: acc.appearances + s.appearances, minutesPlayed: acc.minutesPlayed + s.minutesPlayed, goals: acc.goals + s.goals, assists: acc.assists + s.assists, xG: acc.xG + s.xG, xA: acc.xA + s.xA, shots: acc.shots + s.shots, shotsOnTarget: acc.shotsOnTarget + s.shotsOnTarget }), { appearances: 0, minutesPlayed: 0, goals: 0, assists: 0, xG: 0, xA: 0, shots: 0, shotsOnTarget: 0 });
+    const career = stats.reduce((acc: { appearances: number; minutesPlayed: number; goals: number; assists: number; xG: number; xA: number; shots: number; shotsOnTarget: number }, s: typeof stats[0]) => ({ appearances: acc.appearances + s.appearances, minutesPlayed: acc.minutesPlayed + s.minutesPlayed, goals: acc.goals + s.goals, assists: acc.assists + s.assists, xG: acc.xG + s.xG, xA: acc.xA + s.xA, shots: acc.shots + s.shots, shotsOnTarget: acc.shotsOnTarget + s.shotsOnTarget }), { appearances: 0, minutesPlayed: 0, goals: 0, assists: 0, xG: 0, xA: 0, shots: 0, shotsOnTarget: 0 });
     await setCached(key, { career, bySeason: stats }, 600);
     return { career, bySeason: stats };
   }

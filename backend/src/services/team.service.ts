@@ -65,7 +65,7 @@ export class TeamService {
       include: { homeTeam: { select: { id: true, name: true, shortName: true, crestUrl: true } }, awayTeam: { select: { id: true, name: true, shortName: true, crestUrl: true } } },
     });
 
-    const form = matches.map(m => {
+    const form = matches.map((m: typeof matches[0]) => {
       const isHome = m.homeTeamId === teamId;
       const teamScore = isHome ? m.homeScore : m.awayScore;
       const oppScore = isHome ? m.awayScore : m.homeScore;
@@ -90,7 +90,7 @@ export class TeamService {
       include: { homeTeam: { select: { id: true, name: true, shortName: true, crestUrl: true } }, awayTeam: { select: { id: true, name: true, shortName: true, crestUrl: true } }, season: { select: { name: true, competition: { select: { name: true } } } } },
     });
 
-    const h2h = { matches, summary: { total: matches.length, team1Wins: matches.filter(m => { const isTeam1Home = m.homeTeamId === teamId1; const team1Score = isTeam1Home ? m.homeScore : m.awayScore; const team2Score = isTeam1Home ? m.awayScore : m.homeScore; return team1Score !== null && team2Score !== null && team1Score > team2Score; }).length, team2Wins: matches.filter(m => { const isTeam1Home = m.homeTeamId === teamId1; const team1Score = isTeam1Home ? m.homeScore : m.awayScore; const team2Score = isTeam1Home ? m.awayScore : m.homeScore; return team1Score !== null && team2Score !== null && team1Score < team2Score; }).length, draws: matches.filter(m => { const isTeam1Home = m.homeTeamId === teamId1; const team1Score = isTeam1Home ? m.homeScore : m.awayScore; const team2Score = isTeam1Home ? m.awayScore : m.homeScore; return team1Score !== null && team2Score !== null && team1Score === team2Score; }).length } };
+    const h2h = { matches, summary: { total: matches.length, team1Wins: matches.filter((m: typeof matches[0]) => { const isTeam1Home = m.homeTeamId === teamId1; const team1Score = isTeam1Home ? m.homeScore : m.awayScore; const team2Score = isTeam1Home ? m.awayScore : m.homeScore; return team1Score !== null && team2Score !== null && team1Score > team2Score; }).length, team2Wins: matches.filter((m: typeof matches[0]) => { const isTeam1Home = m.homeTeamId === teamId1; const team1Score = isTeam1Home ? m.homeScore : m.awayScore; const team2Score = isTeam1Home ? m.awayScore : m.homeScore; return team1Score !== null && team2Score !== null && team1Score < team2Score; }).length, draws: matches.filter((m: typeof matches[0]) => { const isTeam1Home = m.homeTeamId === teamId1; const team1Score = isTeam1Home ? m.homeScore : m.awayScore; const team2Score = isTeam1Home ? m.awayScore : m.homeScore; return team1Score !== null && team2Score !== null && team1Score === team2Score; }).length } };
 
     await setCached(key, h2h, 600);
     return h2h;

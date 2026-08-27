@@ -204,11 +204,26 @@ export interface FilterParams {
   competitionId?: string;
   teamId?: string;
   playerId?: string;
+  matchId?: string;
   timeRange?: TimeRange;
   position?: string;
   minMinutes?: number;
   limit?: number;
   offset?: number;
+  situation?: string;
+  outcome?: string;
+  bodyPart?: string;
+  status?: string;
+  fromDate?: string;
+  toDate?: string;
+  type?: string;
+  minuteFrom?: number;
+  minuteTo?: number;
+  nationality?: string;
+  search?: string;
+  sortBy?: string;
+  sortOrder?: string;
+  country?: string;
 }
 
 export interface PaginatedResponse<T> {
